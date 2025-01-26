@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Kids School - Where Learning is Fun!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            min-height: 100vh;
+        }
+
+        .glass-effect {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+        }
+
+        .logo-text {
+            font-family: 'Bubblegum Sans', cursive;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .bounce-animation:hover {
+            animation: bounce 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .slider {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slide {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .balloon-pop {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balloon-pop::after {
+            content: '🎈';
+            position: absolute;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .balloon-pop:active::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-200 to-blue-200">
+    <!-- Header -->
+    <header class="glass-effect fixed w-full top-0 z-50 px-4 py-2">
+        <nav class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex items-center">
+                <h1 class="logo-text text-3xl text-blue-600 font-bold">Happy Kids School</h1>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#home" class="nav-link text-purple-600 hover:text-purple-800 font-semibold"><i class="bi bi-house-heart"></i> Home</a>
+                <a href="#about" class="nav-link text-purple-600 hover:text-purple-800 font-semibold"><i class="bi bi-book"></i> About Us</a>
+                <a href="#staff" class="nav-link text-purple-600 hover:text-purple-800 font-semibold"><i class="bi bi-people"></i> Staff</a>
+                <a href="#activities" class="nav-link text-purple-600 hover:text-purple-800 font-semibold"><i class="bi bi-palette"></i> Activities</a>
+                <a href="#contact" class="nav-link text-purple-600 hover:text-purple-800 font-semibold"><i class="bi bi-envelope-heart"></i> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-20">
+        <!-- Hero Slider -->
+        <section id="home" class="slider glass-effect relative mt-8 rounded-xl">
+            <div class="slide active">
+                <img src="https://source.unsplash.com/random/1200x400/?school,kids" alt="School Life" class="w-full h-full object-cover rounded-xl">
+                <div class="absolute bottom-10 left-10 glass-effect p-4">
+                    <h2 class="text-3xl font-bold text-white">Where Imagination Meets Education</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="glass-effect my-8 p-8 rounded-xl">
+            <h2 class="logo-text text-4xl text-center text-purple-600 mb-6">About Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <p class="text-lg text-purple-700">Welcome to Happy Kids School, where learning is an adventure! We believe every child is unique and deserves a nurturing environment to grow and learn.</p>
+                    <div class="bounce-animation inline-block">
+                        <i class="bi bi-stars text-5xl text-yellow-500"></i>
+                    </div>
+                </div>
+                <div class="glass-effect p-4 rounded-xl">
+                    <h3 class="text-2xl text-purple-600 mb-4">Our Values</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="bi bi-check-circle text-green-500 mr-2"></i> Creative Learning</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle text-green-500 mr-2"></i> Safe Environment</li>
+                        <li class="flex items-center"><i class="bi bi-check-circle text-green-500 mr-2"></i> Qualified Teachers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="glass-effect my-8 p-8 rounded-xl">
+            <h2 class="logo-text text-4xl text-center text-purple-600 mb-6">Fun Activities</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="activity-card glass-effect p-4 rounded-xl text-center">
+                    <i class="bi bi-palette-fill text-4xl text-pink-500"></i>
+                    <h3 class="text-xl font-bold my-2">Arts & Crafts</h3>
+                    <p>Express creativity through colors and shapes!</p>
+                </div>
+                <div class="activity-card glass-effect p-4 rounded-xl text-center">
+                    <i class="bi bi-music-note-beamed text-4xl text-blue-500"></i>
+                    <h3 class="text-xl font-bold my-2">Music & Dance</h3>
+                    <p>Move to the rhythm and make music!</p>
+                </div>
+                <div class="activity-card glass-effect p-4 rounded-xl text-center">
+                    <i class="bi bi-tree text-4xl text-green-500"></i>
+                    <h3 class="text-xl font-bold my-2">Outdoor Play</h3>
+                    <p>Learn and grow in nature!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-effect mt-8 p-6">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="logo-text text-2xl text-purple-600 mb-4">Contact Us</h3>
+                <p><i class="bi bi-envelope"></i> hello@happykids.school</p>
+                <p><i class="bi bi-telephone"></i> (123) 456-7890</p>
+            </div>
+            <div>
+                <h3 class="logo-text text-2xl text-purple-600 mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-2xl text-blue-500 hover:text-blue-700"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-2xl text-pink-500 hover:text-pink-700"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-2xl text-blue-400 hover:text-blue-600"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="logo-text text-2xl text-purple-600 mb-4">Newsletter</h3>
+                <form class="flex">
+                    <input type="email" placeholder="Enter your email" class="glass-effect p-2 rounded-l-xl focus:outline-none">
+                    <button class="balloon-pop bg-purple-500 text-white px-4 rounded-r-xl hover:bg-purple-600">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2023 Happy Kids School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Slider functionality
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
